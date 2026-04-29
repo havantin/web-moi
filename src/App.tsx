@@ -85,7 +85,7 @@ export default function App() {
               animate={{ opacity: 1, x: 0 }}
               className="text-emerald-500 font-mono font-bold text-xl tracking-tighter"
             >
-              Hatin<span className="text-white">.dev</span>
+              Hatin<span className="text-white">.io.vn</span>
             </motion.div>
             
             {/* Desktop Menu */}
