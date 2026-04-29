@@ -62,7 +62,7 @@ export default function App() {
       title: "Profile Website",
       desc: "Trang web giới thiệu bản thân hiện đại với hiệu ứng animation mượt mà.",
       tech: ["React", "Tailwind", "Motion"],
-      link: "https://hatin.io.vn"
+      link: "https://web-profile-theta-two.vercel.app/"
     },
     {
       title: "Hệ thống Giải mã Thuật toán",
@@ -363,7 +363,7 @@ export default function App() {
                 <Facebook className="w-6 h-6 mx-auto mb-4 group-hover:text-white text-blue-500" />
                 <span className="block text-sm font-medium group-hover:text-white">Facebook</span>
               </a>
-              <a href="https://hatin.io.vn" target="_blank" rel="noreferrer" className="p-6 glass rounded-2xl hover:bg-white group transition-all">
+              <a href="https://web-profile-theta-two.vercel.app/" target="_blank" rel="noreferrer" className="p-6 glass rounded-2xl hover:bg-white group transition-all">
                 <Globe className="w-6 h-6 mx-auto mb-4 group-hover:text-black text-gray-400" />
                 <span className="block text-sm font-medium group-hover:text-black">Website</span>
               </a>
