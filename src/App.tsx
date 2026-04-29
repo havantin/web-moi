@@ -241,7 +241,7 @@ export default function App() {
           >
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden glass p-2 rotate-3 hover:rotate-0 transition-transform duration-500">
               <img 
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=Hatin" 
+                src="https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/659116950_122161876766709350_2981570442255074060_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=ASrjhCq5PNUQ7kNvwHymnIt&_nc_oc=AdownBsuzRNIILp9V37Zbn71cKyGWusMsd38xMh3HGm9RGmvU7qAOuspD52JfLsGR2w&_nc_zt=23&_nc_ht=scontent.fhan15-1.fna&_nc_gid=sDu6Hh5Rm9SnsDxlAbpJag&_nc_ss=7b2a8&oh=00_Af1dw6P2v8ouTfPTFimom5mCm2IDRWvSGIwot7EM59nj7g&oe=69F7F549" 
                 alt="Profile" 
                 className="w-full h-full object-cover rounded-xl bg-emerald-500/10"
               />
