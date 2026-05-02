@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Github, 
@@ -21,7 +21,9 @@ import {
   Menu,
   X,
   GraduationCap,
-  Award
+  Award,
+  Music,
+  Pause
 } from 'lucide-react';
 
 // Typing effect component
@@ -39,6 +41,41 @@ const TypingText = ({ text }: { text: string }) => {
   }, [text]);
 
   return <span>{displayText}<span className="animate-pulse">|</span></span>;
+};
+
+// Music Player Component
+const MusicPlayer = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  // Đường dẫn đến file nhạc trong thư mục public/music/
+  const trackSrc = "/music/Mở Lòng Vì Ai (Thazh x Đông Remix).mp3"; 
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play().catch(err => console.log("Trình duyệt chặn phát tự động:", err));
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  return (
+    <div className="fixed bottom-6 left-6 z-[100] flex items-center gap-3 glass p-2 pr-4 rounded-full border border-emerald-500/20 shadow-lg shadow-emerald-500/10 hover:border-emerald-500/50 transition-all">
+      <audio ref={audioRef} src={trackSrc} loop />
+      <button 
+        onClick={togglePlay}
+        className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white hover:bg-emerald-500 transition-all active:scale-90"
+      >
+        {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Music className="w-5 h-5 animate-pulse" />} 
+      </button>
+      <div className="flex flex-col">
+        <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest leading-none">Music</span>
+        <span className="text-[11px] font-medium text-white truncate max-w-[100px]">Mở Lòng Vì Ai</span>
+      </div>
+    </div>
+  );
 };
 
 export default function App() {
@@ -76,6 +113,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-gray-200">
+      
+      {/* Nút nhạc được đặt ở đây để luôn nổi trên mọi section */}
+      <MusicPlayer />
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -371,8 +412,8 @@ export default function App() {
 
             <div className="flex justify-center gap-6 pt-6 border-t border-white/5">
               <a href="https://github.com/havantin" target="_blank" rel="noopener noreferrer">
-    <Github className="w-6 h-6 text-gray-500 hover:text-white transition-colors cursor-pointer" />
-  </a>
+                <Github className="w-6 h-6 text-gray-500 hover:text-white transition-colors cursor-pointer" />
+              </a>
               <Linkedin className="w-6 h-6 text-gray-500 hover:text-white transition-colors cursor-pointer" />
             </div>
           </div>
